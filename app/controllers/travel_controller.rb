@@ -5,10 +5,16 @@ class TravelController < ApplicationController
     @places = Place.all
   end
 
+  def new
+  end
+
   def show
     # Find an existing place
     @places = Place.find_by({"id" => params["id"]})
+    
     @name = @places["name"]
+    @places_id = @places["id"]
+    @entries = Entry.where("place_id" => params["id"])
   end
 
   def create
@@ -21,17 +27,5 @@ class TravelController < ApplicationController
     # Redirect to index site
     redirect_to "/travel"
   end
-
-#  # Enter a new entry
-#  @entry = Entry.new
-#  # Get into from field on website
-#  @entry["title"] = params["title"]
-#  @entry["description"] = params["description"]
-#  @entry["occurred_on"] = params["occurred_on"]
-#  @entry["place_id"] = params["place_id"]
-#  # Save entry in SQL
-#  @entry.save
-#  # Redirect to index site
-#  redirect_to "/travel/"
 
 end

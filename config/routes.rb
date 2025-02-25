@@ -5,7 +5,13 @@ Rails.application.routes.draw do
   # get("/", { :controller => "articles", :action => "index" })
   get("/", { :controller => "travel", :action => "index" })
   resources "travel"
-    get("/travel/new", {:controller => "travel", :action => "new"})
-    get("/travel/:id", :controller => "travel", :action => "show") 
-    post("/travel/", :controller => "travel", :action => "show") 
-end
+  #  get("/travel/new", {:controller => "travel", :action => "new"})
+  #  get("/travel/:id", :controller => "travel", :action => "show") 
+  #  post("/travel/", :controller => "travel", :action => "show")
+  #  post("/travel:id/", :controller => "travel", :action => "show") 
+
+  resources "places"
+ 
+  end
+
+

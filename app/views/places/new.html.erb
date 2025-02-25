@@ -1,0 +1,24 @@
+<h1>Add a new event below!</h1>
+
+<form action="/places/" method="post">
+  <h4>
+    <label for="title">Title for the event</label>
+    <br>
+    <input type="text" name="title" size="53">
+  </h4>
+  <h4>
+    <label for="description">Description of event</label>
+    <br>
+    <textarea id="description" name="description" rows="4" cols="50"></textarea>
+  </h4>
+  <h4>
+    <label for="occurred_on">When did it occur?</label>
+    <br>
+    <input type="date" name="occurred_on">
+  </h4>
+
+  <!-- transfer state from the previous action to the next -->
+  <input type="hidden" name="place_id" value="<%= params["id"] %>">
+
+  <button>Post!</button>
+</form>
